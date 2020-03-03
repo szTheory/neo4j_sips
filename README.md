@@ -15,28 +15,36 @@ Documentation: [hexdocs.pm/neo4j_sips/](http://hexdocs.pm/neo4j_sips/)
 
 [Available in Hex](https://hex.pm/packages/neo4j_sips). Edit the `mix.ex` file and add the `neo4j_sips` dependency to the `deps/1 `function:
 
-    def deps do
-      [{:neo4j_sips, "~> 0.2"}]
-    end
+```elixir
+def deps do
+  [{:neo4j_sips, "~> 0.2"}]
+end
+```
 
 or from Github:
 
-    def deps do
-      [{:neo4j_sips, github: "florinpatrascu/neo4j_sips"}]
-    end
+```elixir
+def deps do
+  [{:neo4j_sips, github: "florinpatrascu/neo4j_sips"}]
+end
+```
 
 If you're using a local development copy:
 
-    def deps do
-      [{:neo4j_sips, path: "../neo4j_sips"}]
-    end
+```elixir
+def deps do
+  [{:neo4j_sips, path: "../neo4j_sips"}]
+end
+```
 
 Then add the `neo4j_sips` dependency the applications list:
 
-    def application do
-      [applications: [:logger, :neo4j_sips],
-       mod: {Neo4j.Sips.Application, []}]
-    end
+```elixir
+def application do
+  [applications: [:logger, :neo4j_sips],
+   mod: {Neo4j.Sips.Application, []}]
+end
+```
 
 
 Edit the `config/config.exs` and describe a Neo4j server endpoint, example:
@@ -50,16 +58,20 @@ Edit the `config/config.exs` and describe a Neo4j server endpoint, example:
 Run `mix do deps.get, deps.compile`
 
 If your server requires basic authentication, add this to your config file:
-      
-      basic_auth: [username: "foo", password: "bar"]
+
+```elixir
+basic_auth: [username: "foo", password: "bar"]
+```
       
 Or:
-      
-      token_auth: "bmVvNGo6dGVzdA==" # if using an authentication token?!
+```elixir   
+token_auth: "bmVvNGo6dGVzdA==" # if using an authentication token?!
+```
 
 You can also specify the authentication in the `url` config:
-
-      url: "http://neo4j:neo4j@localhost:7474"
+```elixir
+url: "http://neo4j:neo4j@localhost:7474"
+```
   
 ### Example
 
